@@ -4,21 +4,18 @@ import (
 	"fmt"
 	"github.com/iafan/cwalk"
 	"os"
-	"sync"
+	"sync/atomic"
 )
 
 func main() {
-	count := 0
-	var mutex sync.Mutex
+	var count int64
 
 	cwalk.Walk("./", func(root string, info os.FileInfo, err error) error {
 		if err != nil {
 			return err
 		}
 
-		mutex.Lock()
-		count++
-		mutex.Unlock()
+		atomic.AddInt64(&count, 1)
 		return nil
 	})
 	fmt.Println(count)

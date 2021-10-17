@@ -3,14 +3,15 @@ package main
 import (
 	"fmt"
 	"github.com/karrick/godirwalk"
+	"sync/atomic"
 )
 
 func main() {
-	count := 0
+	var count int64
 	godirwalk.Walk("./", &godirwalk.Options{
 		Unsorted: true,
 		Callback: func(osPathname string, de *godirwalk.Dirent) error {
-			count++
+			atomic.AddInt64(&count, 1)
 			return nil
 		},
 		ErrorCallback: func(osPathname string, err error) godirwalk.ErrorAction {

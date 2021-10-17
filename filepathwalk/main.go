@@ -4,16 +4,17 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"sync/atomic"
 )
 
 func main() {
-	count := 0
+	var count int64
 	filepath.Walk("./", func(root string, info os.FileInfo, err error) error {
 		if err != nil {
 			return err
 		}
 
-		count++
+		atomic.AddInt64(&count, 1)
 		return nil
 	})
 

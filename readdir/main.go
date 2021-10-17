@@ -4,13 +4,14 @@ import (
 	"fmt"
 	"os"
 	"path"
+	"sync/atomic"
 )
 
 func main() {
-	fmt.Println(readDir("./") + 1)
+	fmt.Println(readDir("./") + 1) // account for the fact that ./ is not counted
 }
 
-func readDir(name string) int {
+func readDir(name string) int64 {
 	d, err := os.Open(name)
 	if err != nil {
 		fmt.Println(err.Error())
@@ -24,14 +25,13 @@ func readDir(name string) int {
 		return 0
 	}
 
-	count := len(files) // account for this one
+	count := int64(len(files))
 
 	for _, f := range files {
 		if f.IsDir() {
-			count += readDir(path.Join(name, f.Name()))
+			atomic.AddInt64(&count, readDir(path.Join(name, f.Name())))
 		}
 	}
 
 	return count
 }
-
