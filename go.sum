@@ -1,0 +1,6 @@
+github.com/MichaelTJones/walk v0.0.0-20161122175330-4748e29d5718 h1:FSsoaa1q4jAaeiAUxf9H0PgFP7eA/UL6c3PdJH+nMN4=
+github.com/MichaelTJones/walk v0.0.0-20161122175330-4748e29d5718/go.mod h1:VVwKsx9Dc8rNG55BWqogoJzGubjKnRoXdUvpGbWqeCc=
+github.com/iafan/cwalk v0.0.0-20210125030640-586a8832a711 h1:UnfAf/kLhzHd6UQ6nyum/cCqBImrlrpq8rHLVjaKerA=
+github.com/iafan/cwalk v0.0.0-20210125030640-586a8832a711/go.mod h1:9NZZY8JKo3RhqKRYhRWMgCO4S4adM76u8w4gGUMnlig=
+github.com/karrick/godirwalk v1.16.1 h1:DynhcF+bztK8gooS0+NDJFrdNZjJ3gzVzC545UNA9iw=
+github.com/karrick/godirwalk v1.16.1/go.mod h1:j4mkqPuvaLI8mp1DroR3P6ad7cyYd4c1qeJ3RV7ULlk=
