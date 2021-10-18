@@ -16,7 +16,6 @@ func main() {
 		}
 
 		atomic.AddInt64(&count, 1)
-
 		return nil
 	})
 
