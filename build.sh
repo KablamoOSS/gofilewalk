@@ -5,6 +5,11 @@ cd filepathwalk
 go install
 cd ..
 
+echo 'filepathwalkdir'
+cd filepathwalkdir
+go install
+cd ..
+
 echo 'iafan'
 cd iafan
 go install
